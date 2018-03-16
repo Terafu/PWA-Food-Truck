@@ -7,4 +7,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  onglets = [
+  	{ 
+	  	nom : 'Accueil',
+		lien : '/'
+	},
+	{
+		nom : 'La carte',
+		lien : 'menu'
+	},
+	{
+		nom : 'Contact',
+		lien : 'contact'
+	}
+	];
 }

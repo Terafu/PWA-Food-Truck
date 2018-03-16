@@ -1,0 +1,6 @@
+.carousel-item{
+	border : 1px solid red;
+	display : block;
+	height : !900px;
+	width: auto;
+}

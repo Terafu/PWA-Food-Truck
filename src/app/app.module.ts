@@ -18,9 +18,12 @@ import { OrderComponent } from './order/order.component';
 import { ProductsQuantityComponent } from './products-quantity/products-quantity.component';
 import { RouterModule, Routes } from '@angular/router';
 
+import { MaterializeModule } from 'angular2-materialize';
+
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'menu', component: MenuComponent}
+  { path: 'menu', component: MenuComponent},
+  { path : 'contact', component: ContactComponent}
 ]
 
 @NgModule({
@@ -43,6 +46,7 @@ const appRoutes: Routes = [
           { enableTracing: false } // <-- debugging purposes only
         ),
     BrowserModule,
+    MaterializeModule,
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
