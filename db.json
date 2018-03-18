@@ -1,0 +1,53 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "Burger Classic",
+      "details": "Angular component looks awesome!",
+      "price": "9",
+      "picture": "/"
+    },
+    {
+      "id": 2,
+      "title": "Western Burger",
+      "details": "Angular component looks awesome!",
+      "price": "10",
+      "picture": "/"
+    },
+    {
+      "id": 3,
+      "title": "Cheese Burger",
+      "details": "Angular component looks awesome!",
+      "price": "11.5",
+      "picture": "/"
+    },
+    {
+      "id": 4,
+      "title": "Double Burger",
+      "details": "Angular component looks awesome!",
+      "price": "12",
+      "picture": "/"
+    },
+        {
+      "id": 5,
+      "title": "Salmon Burger",
+      "details": "Angular component looks awesome!",
+      "price": "12",
+      "picture": "/"
+    },
+        {
+      "id": 6,
+      "title": "Original Tasty Burger",
+      "details": "Angular component looks awesome!",
+      "price": "11.5",
+      "picture": "/"
+    },
+        {
+      "id": 7,
+      "title": "Whitof Burger",
+      "details": "Angular component looks awesome!",
+      "price": "14",
+      "picture": "/"
+    }
+  ]
+}

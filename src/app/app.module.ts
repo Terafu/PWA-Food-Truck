@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import {HttpClientModule} from '@angular/common/http';
 
 
 import { ServiceWorkerModule } from '@angular/service-worker';
@@ -17,6 +18,8 @@ import { ManageOrdersComponent } from './manage-orders/manage-orders.component';
 import { OrderComponent } from './order/order.component';
 import { ProductsQuantityComponent } from './products-quantity/products-quantity.component';
 import { RouterModule, Routes } from '@angular/router';
+
+import { ProductService } from "./services/product.service";
 
 import { MaterializeModule } from 'angular2-materialize';
 
@@ -47,9 +50,10 @@ const appRoutes: Routes = [
         ),
     BrowserModule,
     MaterializeModule,
+    HttpClientModule,
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [],
+  providers: [ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

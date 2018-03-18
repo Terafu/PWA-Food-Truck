@@ -1,3 +1,8 @@
-<p>
-  product works!
-</p>
+<div class="card" style="width: 35rem;">
+    <h3 class="card-title"> {{this.product?.title}} <small>{{this.product?.price}} <span> € </span></small></h3>
+    <p class="card-text"> {{this.product?.details}} </p>
+<!--     <div class="input-group-btn">
+	    <a class="btn btn-info btn-lg" [routerLink]="['/create',this.article.id]"> Modify</a>
+	    <button class="btn btn-danger btn-lg" (click)="delete()">Delete</button>
+    </div> -->
+</div>
