@@ -23,5 +23,15 @@
         "/assets/**"
       ]
     }
+  }],
+  "dataGroups": [{
+    "name": "products",
+    "urls": ["/products"],
+    "version": 0,
+    "cacheConfig": {
+      "maxSize": 5000,
+      "maxAge": "100d",
+      "strategy": "freshness"
+    }
   }]
 }
