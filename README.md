@@ -1,4 +1,4 @@
-# SimplePwa
+# PWA -- Food Truck 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.3.
 
@@ -25,3 +25,11 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+# Application
+  This application goal is to offer a direct view of the menu of a food Truck for clients. The avdantage of a PWA will allow to clients to access to a menu easily and without an always internet connection. 
+ 
+## Author
+Maxime DUFOUR, Gatient TAFOREAU, Luc BETTUZZI
+Engineer apprentices in POLYTECH Paris-SUD.
+
