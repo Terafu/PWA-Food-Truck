@@ -19,13 +19,17 @@ import { OrderComponent } from './order/order.component';
 import { ProductsQuantityComponent } from './products-quantity/products-quantity.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { ProductService } from './services/product.service';
+import { ProductCreationComponent } from './product-creation/product-creation.component';
 
 const appRoutes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'menu', component: MenuComponent},
-  { path : 'contact', component: ContactComponent}
+  { path : '', component: HomeComponent },
+  { path : 'menu', component: MenuComponent},
+  { path : 'contact', component: ContactComponent},
+  { path : 'admin', component: AdminComponent},
+  { path : 'create', component: ProductCreationComponent},
 ];
 
 @NgModule({
@@ -40,13 +44,15 @@ const appRoutes: Routes = [
     ManageProductsComponent,
     ManageOrdersComponent,
     OrderComponent,
-    ProductsQuantityComponent
+    ProductsQuantityComponent,
+    ProductCreationComponent
   ],
   imports: [
     RouterModule.forRoot(
           appRoutes,
           { enableTracing: false } // <-- debugging purposes only
         ),
+    ReactiveFormsModule,
     BrowserModule,
     HttpClientModule,
     NgbModule.forRoot(),
