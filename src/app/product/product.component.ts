@@ -1,7 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 import { Product } from '../models/product';
 import {ProductService} from '../services/product.service';
 import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-product',
@@ -13,6 +14,12 @@ export class ProductComponent implements OnInit {
 
   @Input()
   product: Product;
+
+  @Input()
+  modif:boolean;
+
+  @Output()
+  deletedProduct : EventEmitter<Product> = new EventEmitter();
 
   constructor(private articleService: ProductService, private modalService: NgbModal) { }
 
@@ -35,5 +42,9 @@ export class ProductComponent implements OnInit {
     } else {
       return  `with: ${reason}`;
     }
+  }
+
+  delete(){
+    this.deletedProduct.emit(this.product);
   }
 }

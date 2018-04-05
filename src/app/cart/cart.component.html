@@ -3,7 +3,7 @@
     <div class="card-header bg-dark text-light">
       <i class="fa fa-shopping-cart" aria-hidden="true"></i>
       Panier
-      <a href="" class="btn btn-outline-info btn-sm pull-right">Continuez vos achats</a>
+      <a [routerLink]="['/menu']" class="btn btn-outline-info btn-sm pull-right">Continuez vos achats</a>
       <div class="clearfix"></div>
     </div>
     <div class="card-body">
@@ -54,7 +54,7 @@
 
       <hr>
       <div class="pull-right">
-        <a href="" class="btn btn-outline-secondary pull-right">Actualiser</a>
+        <a [routerLink]="['/cart']" class="btn btn-outline-secondary pull-right">Actualiser</a>
       </div>
     </div>
     <div class="card-footer">

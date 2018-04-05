@@ -26,11 +26,13 @@ import { ProductCreationComponent } from './product-creation/product-creation.co
 
 const appRoutes: Routes = [
   { path : '', component: HomeComponent },
+  { path : 'product/:id', component: ProductComponent},
   { path : 'menu', component: MenuComponent},
   { path : 'contact', component: ContactComponent},
   { path : 'admin', component: AdminComponent},
   { path : 'create', component: ProductCreationComponent},
-  { path : 'cart', component: CartComponent}
+  { path : 'cart', component: CartComponent},
+  { path : 'update/:id', component: ProductCreationComponent}
 ];
 
 @NgModule({

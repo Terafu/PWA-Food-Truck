@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { RawProduct } from '../models/raw-product';
 import { Product } from '../models/product';
@@ -12,11 +12,15 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class ProductCreationComponent implements OnInit {
 
+	@Input()
+  	product: Product;
+
 	productForm : FormGroup;
 	fileToUpload: File = null;
 	image : any;
+	modification : boolean;
 
-	constructor(private fb: FormBuilder, private productService : ProductService, private router : Router) { }
+	constructor(private fb: FormBuilder, private productService : ProductService, private router : Router, private activatedRoute  : ActivatedRoute) { }
 
 	ngOnInit() {
 
@@ -24,6 +28,26 @@ export class ProductCreationComponent implements OnInit {
 			'title': ['', Validators.required ],
 			'details' : ['', Validators.required ],
 			'price' : ['', Validators.required ],
+		});
+
+		this.modification = false;
+	  	this.activatedRoute.params.subscribe( params => {
+			if (params && params['id']){
+
+				this.productService.getProduct(params['id']).subscribe(
+					(fetchedProduct: Product) => {
+
+					this.product = fetchedProduct;
+
+					this.productForm.controls['title'].setValue(this.product.title);
+					this.productForm.controls['details'].setValue(this.product.details);
+					this.productForm.controls['price'].setValue(this.product.price);
+					this.image = this.product.picture;
+
+					this.modification = true;
+				});
+
+			}
 		});
 	}
 
@@ -39,7 +63,11 @@ export class ProductCreationComponent implements OnInit {
 	}
 
 	actionProduct(){
-		this.createProduct();
+		if(this.modification){
+			this.updateProduct();
+		}else{
+			this.createProduct();
+		}
 	}
 
 	createProduct(){
@@ -50,9 +78,23 @@ export class ProductCreationComponent implements OnInit {
 		  price : formModel.price,
 		  picture : this.image
 		}
-	    this.productService.add(rawProduct).subscribe((newProduct)=>{
+	    this.productService.addProducts(rawProduct).subscribe((newProduct)=>{
 			//this.router.navigate(['/product/' + newProduct.id]);
 			this.router.navigate(['/menu'])
+		});
+	}
+
+	updateProduct(){
+		const formModel = this.productForm.value;
+
+		this.product.title = formModel.title;
+		this.product.details = formModel.details;
+		this.product.price = formModel.price;
+		this.product.picture = this.image
+
+	  	this.productService.putProduct(this.product.id, this.product).subscribe(()=>{
+			//this.router.navigate(['/articles/' + this.product.id]);
+			this.router.navigate(['/admin']);
 		});
 	}
 

@@ -3,3 +3,13 @@
 	    <input type="checkbox" ngbButton [routerLink]="['/create']"> Ajouter un hamburger
 	</label>
 </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4" *ngFor="let product of this.products() | async ">
+      <app-product [product]="product" [modif]="true" (deletedProduct)="delete($event)"></app-product>
+      <div class="btn-ground text-center">
+  </div>
+    </div>
+  </div>
+</div>
