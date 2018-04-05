@@ -18,16 +18,15 @@ import { ManageOrdersComponent } from './manage-orders/manage-orders.component';
 import { OrderComponent } from './order/order.component';
 import { ProductsQuantityComponent } from './products-quantity/products-quantity.component';
 import { RouterModule, Routes } from '@angular/router';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-import { ProductService } from "./services/product.service";
-
-import { MaterializeModule } from 'angular2-materialize';
+import { ProductService } from './services/product.service';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'menu', component: MenuComponent},
   { path : 'contact', component: ContactComponent}
-]
+];
 
 @NgModule({
   declarations: [
@@ -49,8 +48,8 @@ const appRoutes: Routes = [
           { enableTracing: false } // <-- debugging purposes only
         ),
     BrowserModule,
-    MaterializeModule,
     HttpClientModule,
+    NgbModule.forRoot(),
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [ProductService],

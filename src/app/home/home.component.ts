@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { EventEmitter } from '@angular/core';
-import {MaterializeAction} from 'angular2-materialize';
+import {NgbCarouselConfig} from '@ng-bootstrap/ng-bootstrap';
+import {map} from 'rxjs/operators';
+import {HttpClient} from '@angular/common/http';
+import {ProductService} from '../services/product.service';
+import {Observable} from 'rxjs/Observable';
+import {Product} from '../models/product';
 
 @Component({
   selector: 'app-home',
@@ -9,30 +13,31 @@ import {MaterializeAction} from 'angular2-materialize';
 })
 export class HomeComponent implements OnInit {
 
- constructor() { }
+  images: Array<string>;
+  private _product: Observable<Product[]>;
+
+  constructor(config: NgbCarouselConfig, private _http: HttpClient, private productService: ProductService) {
+    // customize default values of carousels used by this component tree
+    config.interval = 3000;
+    config.wrap = true;
+    config.keyboard = false;
+  }
 
   ngOnInit() {
+    this._product = this.productService.getProducts();
+    this._http.get('https://picsum.photos/list')
+      .pipe(map((images: Array<{id: number}>) => this._randomImageUrls(images)))
+      .subscribe(images => this.images = images);
   }
 
-
-  modalActions = new EventEmitter<string|MaterializeAction>();
-  carouselActions = new EventEmitter<string|MaterializeAction>();
-
-
-  openModal() {
-    this.modalActions.emit({action:"modal",params:['open']});
-  }
-  closeModal() {
-    this.modalActions.emit({action:"modal",params:['close']});
+  private _randomImageUrls(images: Array<{id: number}>): Array<string> {
+    return [1, 2, 3].map(() => {
+      const randomId = images[Math.floor(Math.random() * images.length)].id;
+      return `https://picsum.photos/900/500?image=${randomId}`;
+    });
   }
 
-
-  prev(){
-      this.carouselActions.emit({action:"carousel",params:['prev']});
+  products(): Observable<Product[]> {
+    return this._product;
   }
-
-  next(){
-      this.carouselActions.emit({action:"carousel",params:['next']});
-  }
-
 }
