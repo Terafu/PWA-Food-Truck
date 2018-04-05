@@ -1,0 +1,10 @@
+img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+ngb-carousel {
+  background-color: #003380;
+  height: 500px;
+}

@@ -25,7 +25,8 @@ import { ProductService } from './services/product.service';
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'menu', component: MenuComponent},
-  { path : 'contact', component: ContactComponent}
+  { path : 'contact', component: ContactComponent},
+  { path : 'cart', component: CartComponent}
 ];
 
 @NgModule({
