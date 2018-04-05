@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'app';
   onglets = [
-  	{ 
+  	{
 	  	nom : 'Accueil',
 		lien : '/'
 	},
@@ -19,6 +19,10 @@ export class AppComponent {
 	{
 		nom : 'Contact',
 		lien : 'contact'
-	}
+	},
+    {
+      nom: 'Panier',
+      lien: 'cart'
+    }
 	];
 }
