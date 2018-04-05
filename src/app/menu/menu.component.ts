@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {ProductService} from '../services/product.service';
+import { ProductService } from '../services/product.service';
 import { Product } from '../models/product';
-import {Observable} from 'rxjs/Observable';
-import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import { Observable } from 'rxjs/Observable';
+import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-menu',

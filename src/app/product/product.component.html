@@ -9,7 +9,7 @@
   </div>
   <div class="space-ten"></div>
   <div class="btn-ground text-center">
-    <button type="button" class="btn btn-primary blue"><i class="fa fa-shopping-cart"></i> Add To Cart</button>
+    <button type="button" class="btn btn-primary blue" (click)="addCart(content)"><i class="fa fa-shopping-cart"></i> Add To Cart</button>
     <button type="button" class="btn btn-primary blue" (click)="open(content)"><i class="fa fa-search"></i> Quick View</button>
     <div *ngIf="this.modif">
       <button type="button" class="btn btn-info" [routerLink]="['/update',this.product.id]"><i class="fas fa-pencil-alt"></i> Modify</button>

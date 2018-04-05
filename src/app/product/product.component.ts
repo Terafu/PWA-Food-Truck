@@ -3,6 +3,7 @@ import { Product } from '../models/product';
 import {ProductService} from '../services/product.service';
 import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import { EventEmitter } from '@angular/core';
+import { CartComponent } from '../cart/cart.component';
 
 @Component({
   selector: 'app-product',
@@ -20,6 +21,8 @@ export class ProductComponent implements OnInit {
 
   @Output()
   deletedProduct : EventEmitter<Product> = new EventEmitter();
+
+  cart : CartComponent;
 
   constructor(private articleService: ProductService, private modalService: NgbModal) { }
 
@@ -46,5 +49,15 @@ export class ProductComponent implements OnInit {
 
   delete(){
     this.deletedProduct.emit(this.product);
+  }
+
+  addCart(){
+    
+    if(window.localStorage.getItem("selectedProducts")){
+
+    }else {
+      window.localStorage.setItem("selectedProducts", this.product);
+    }
+    
   }
 }
