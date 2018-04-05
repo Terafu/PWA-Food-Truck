@@ -1,0 +1,24 @@
+<h2 >Product</h2>
+<h3 ><i>Create your product</i></h3>
+<form [formGroup]="this.productForm" (ngSubmit)="actionProduct()">
+  <div class="form-group">
+    <label class="center-block">title:
+      <input class="form-control" formControlName="title">
+    </label>
+    <br />
+    <label class="center-block">details:
+      <textarea class="form-control" formControlName="details"></textarea>
+    </label>
+    <br />
+    <label class="center-block">price:
+      <input class="form-control" formControlName="price">
+    </label>
+    <br />
+    <label for="file">Choose File</label>
+    <input type="file"
+           id="file"
+           (change)="handleFileInput($event.target.files)">
+    <br/>
+    <button class="btn btn-success" [disabled]="productForm.invalid" type="submit">Save</button>
+  </div>
+</form>
