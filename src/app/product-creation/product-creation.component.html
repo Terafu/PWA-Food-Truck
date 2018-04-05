@@ -14,11 +14,12 @@
       <input class="form-control" formControlName="price">
     </label>
     <br />
-    <label for="file">Choose File</label>
+    <label for="file"></label>
     <input type="file"
            id="file"
            (change)="handleFileInput($event.target.files)">
     <br/>
+    <div *ngIf="this.image"><img src={{this.image}}></div>
     <button class="btn btn-success" [disabled]="productForm.invalid" type="submit">Save</button>
   </div>
 </form>

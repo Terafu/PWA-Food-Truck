@@ -2,7 +2,7 @@
   "products": [
     {
       "id": 1,
-      "title": "Burger Classic",
+      "title": "Classic Burger",
       "details": "Angular component looks awesome!",
       "price": "9",
       "picture": "assets/img/burger1.jpg"
@@ -41,7 +41,6 @@
       "details": "Angular component looks awesome!",
       "price": "11.5",
       "picture": "assets/img/burger9.jpg"
-    },
-    
+    }
   ]
 }
