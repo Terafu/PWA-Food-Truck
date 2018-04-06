@@ -49,7 +49,7 @@ export class ProductComponent implements OnInit {
     this.deletedProduct.emit(this.product);
   }
 
-  addCart(){
+  addCart(content){
    /* if(window.localStorage.getItem("selectedProducts")){
       var a = new Array();
       var b = JSON.parse(window.localStorage.getItem("selectedProducts"));
@@ -88,7 +88,7 @@ export class ProductComponent implements OnInit {
         var id = this.product.id
         var size = b.length
 
-        b.forEach(function(elt){ 
+        b.forEach(function(elt){
           console.log("id local = " + id)
           console.log("id courant = " + elt.productId)
         if(elt.productId == id){
@@ -108,12 +108,12 @@ export class ProductComponent implements OnInit {
         i++;
       })
       }
-      
+
 
     }else {
       var prd : RawProductsQuantity = { productId : this.product.id , quantity : 1};
       window.localStorage.setItem("selectedProducts", JSON.stringify(prd));
     }*/
-    
+
   }
 }
