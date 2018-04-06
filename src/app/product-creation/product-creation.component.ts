@@ -80,7 +80,7 @@ export class ProductCreationComponent implements OnInit {
 		}
 	    this.productService.addProducts(rawProduct).subscribe((newProduct)=>{
 			//this.router.navigate(['/product/' + newProduct.id]);
-			this.router.navigate(['/menu'])
+			this.router.navigate(['/admin'])
 		});
 	}
 

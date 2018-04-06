@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../models/product';
+import { RawProductsQuantity } from '../models/raw-productsQuantity';
 
 @Component({
   selector: 'app-cart',
@@ -8,9 +9,16 @@ import { Product } from '../models/product';
 })
 export class CartComponent implements OnInit {
 
-  constructor() { }
+	products : any;
+	productQty : RawProductsQuantity[];
 
-  ngOnInit() {
-  }
+	constructor() { }
+
+	ngOnInit() {
+		this.products = JSON.parse(window.localStorage.getItem("selectedProducts"));
+		this.products.forEach(function(elt){
+
+		});
+	}
 
 }
