@@ -52,7 +52,9 @@ export class ProductComponent implements OnInit {
   }
 
   addCart(){
-    
+
+    productQty : any [];
+
     if(window.localStorage.getItem("selectedProducts")){
 
     }else {

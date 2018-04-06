@@ -1,0 +1,20 @@
+{
+    "short_name": "Burger",
+    "name": "Burger",
+    "start_url": "/",
+
+    "theme_color": "#111b46",
+    "background_color": "#111b46",
+
+    "display": "standalone",
+    "orientation": "any",
+
+    "icons": [
+        {
+            "src": "/assets/icons/icon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+
+}
