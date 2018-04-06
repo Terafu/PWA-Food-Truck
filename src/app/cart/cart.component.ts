@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../models/product';
-import { RawProductsQuantity } from '../models/raw-productsQuantity';
+import { ProductsQuantity } from '../models/raw-productsQuantity';
 
 @Component({
   selector: 'app-cart',
@@ -10,7 +10,7 @@ import { RawProductsQuantity } from '../models/raw-productsQuantity';
 export class CartComponent implements OnInit {
 
 	products : any;
-	productQty : RawProductsQuantity[];
+	productQty : ProductsQuantity[];
 
 	constructor() { }
 
