@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
 import { Product } from '../models/product';
 import { ProductsQuantity } from '../models/productsQuantity';
+import { RawProductsQuantity } from '../models/raw-productsQuantity';
 import { ProductService } from '../services/product.service';
 import { ModalDismissReasons, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { EventEmitter } from '@angular/core';
@@ -50,55 +51,47 @@ export class ProductComponent implements OnInit {
   }
 
   addCart(){
-   /* if(window.localStorage.getItem("selectedProducts")){
-      var a = new Array();
-      var b = JSON.parse(window.localStorage.getItem("selectedProducts"));
-      if(b.length == 1){
-        a.push(JSON.parse(window.localStorage.getItem("selectedProducts")));
-      } else {
-        a = JSON.parse(window.localStorage.getItem("selectedProducts"));
-      }
-
-      a.push(this.product.id)
-
-      window.localStorage.setItem("selectedProducts", JSON.stringify(a));
+    //Si nous avons déjà des produits stocké
+    if(window.localStorage.getItem("selectedProducts")){
 
       var exist = false
       var b = JSON.parse(window.localStorage.getItem("selectedProducts"));
       var i = 0
       var a = new Array();
-      a.push(b);
 
+      //On rentre dans le cas ou nous n'avons qu'un élément
       if(!Number.isInteger(b.length)){
+        a.push(b);
 
-        console.log("passe : " + 45)
         if(b.productId == this.product.id){
-          console.log("passe : " + 1)
           var prd : RawProductsQuantity = { productId : this.product.id , quantity : b.quantity + 1};
           window.localStorage.setItem("selectedProducts", JSON.stringify(prd));
         }
         else{
-          console.log("passe : " + 2)
           var prd : RawProductsQuantity = { productId : this.product.id , quantity : 1};
           a.push(prd)
           window.localStorage.setItem("selectedProducts", JSON.stringify(a));
         }
       }
+      //Lorsque nous avons plusieurs éléments
       else{
         var id = this.product.id
         var size = b.length
+        a = b;
 
         b.forEach(function(elt){ 
           console.log("id local = " + id)
           console.log("id courant = " + elt.productId)
+          console.log(elt)
+        //Si le produit est déjà présent dans la liste
         if(elt.productId == id){
           console.log("passe : " + 3)
           exist = true
           elt.quantity++;
-          a = b
           window.localStorage.setItem("selectedProducts", JSON.stringify(a));
           return;
         }
+        //Si le produit n'est pas présent dans la liste
         if(i+1 == size && !exist){
           console.log("passe : " + 4)
           var prd : RawProductsQuantity = { productId : id , quantity : 1};
@@ -110,10 +103,12 @@ export class ProductComponent implements OnInit {
       }
       
 
-    }else {
+    }
+    //Dans le cas ou nous n'avons toujours pas d'article stocké
+    else {
       var prd : RawProductsQuantity = { productId : this.product.id , quantity : 1};
       window.localStorage.setItem("selectedProducts", JSON.stringify(prd));
-    }*/
+    }
     
   }
 }
