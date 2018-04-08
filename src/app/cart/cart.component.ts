@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../models/product';
+<<<<<<< HEAD
 import { RawProductsQuantity } from '../models/raw-productsQuantity';
 import { ProductService } from '../services/product.service';
 import { Observable } from 'rxjs/Observable';
+=======
+import { ProductsQuantity } from '../models/raw-productsQuantity';
+>>>>>>> e7601e1904058f60cf14b7967c3e74915d1213c7
 
 @Component({
   selector: 'app-cart',
@@ -12,9 +16,13 @@ import { Observable } from 'rxjs/Observable';
 export class CartComponent implements OnInit {
 
 	products : any;
+<<<<<<< HEAD
 	productQty : RawProductsQuantity[];
 	burgers : Burger[];
 	bgr : any
+=======
+	productQty : ProductsQuantity[];
+>>>>>>> e7601e1904058f60cf14b7967c3e74915d1213c7
 
 	constructor(private productService : ProductService) { 
 
