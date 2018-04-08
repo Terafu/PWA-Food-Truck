@@ -22,6 +22,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { ProductService } from './services/product.service';
+import { CartService } from './services/cart.service';
 import { ProductCreationComponent } from './product-creation/product-creation.component';
 
 const appRoutes: Routes = [
@@ -61,7 +62,7 @@ const appRoutes: Routes = [
     NgbModule.forRoot(),
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [ProductService],
+  providers: [ProductService, CartService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

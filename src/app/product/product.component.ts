@@ -80,26 +80,21 @@ export class ProductComponent implements OnInit {
         a = b;
 
         b.forEach(function(elt){ 
-          console.log("id local = " + id)
-          console.log("id courant = " + elt.productId)
-          console.log(elt)
-        //Si le produit est déjà présent dans la liste
-        if(elt.productId == id){
-          console.log("passe : " + 3)
-          exist = true
-          elt.quantity++;
-          window.localStorage.setItem("selectedProducts", JSON.stringify(a));
-          return;
-        }
-        //Si le produit n'est pas présent dans la liste
-        if(i+1 == size && !exist){
-          console.log("passe : " + 4)
-          var prd : RawProductsQuantity = { productId : id , quantity : 1};
-          a.push(prd)
-          window.localStorage.setItem("selectedProducts", JSON.stringify(a));
-        }
-        i++;
-      })
+	        //Si le produit est déjà présent dans la liste
+	        if(elt.productId == id){
+	          exist = true
+	          elt.quantity++;
+	          window.localStorage.setItem("selectedProducts", JSON.stringify(a));
+	          return;
+	        }
+	        //Si le produit n'est pas présent dans la liste
+	        if(i+1 == size && !exist){
+	          var prd : RawProductsQuantity = { productId : id , quantity : 1};
+	          a.push(prd)
+	          window.localStorage.setItem("selectedProducts", JSON.stringify(a));
+	        }
+	        i++;
+	    })
       }
       
 
