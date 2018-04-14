@@ -3,42 +3,42 @@
     {
       "id": 1,
       "title": "Classic Burger",
-      "details": "Angular component looks awesome!",
+      "details": " Simple et classique. Salade Tomate Oignion. Le complet par définition!",
       "price": "9",
       "picture": "assets/img/burger1.jpg"
     },
     {
       "id": 2,
       "title": "Western Burger",
-      "details": "Angular component looks awesome!",
+      "details": "Tel un oiseau qui flane dans les airs,  ce burger vous fera voyager au plus profond des plaines américaines !",
       "price": "10",
       "picture": "assets/img/burger2.jpg"
     },
     {
       "id": 3,
       "title": "Cheese Burger",
-      "details": "Angular component looks awesome!",
+      "details": "Vous aimez le fromage? Ce burger est fait pour vous! Fromage savoyard, vin blanc, vin rouge , pastis (on ne sait pas ce qu'il fait là), mais il vous plaiera à coup sûr!",
       "price": "11.5",
       "picture": "assets/img/burger3.jpg"
     },
     {
       "id": 4,
       "title": "Double Burger",
-      "details": "Angular component looks awesome!",
+      "details": "Un steak et quatre pains de riz, à 12 euros c'est l'affaire du siècles ",
       "price": "12",
       "picture": "assets/img/burger4.jpg"
     },
     {
       "id": 5,
       "title": "Salmon Burger",
-      "details": "Angular component looks awesome!",
+      "details": "BURGER DU MOMENT ! Un saumon pêché par mon frère dans le ventre d'une baleine dans la mer morte (naturellement salée). RIP.",
       "price": "12",
       "picture": "assets/img/burger8.jpg"
     },
     {
       "id": 6,
       "title": "Original Tasty Burger",
-      "details": "Angular component looks awesome!",
+      "details": "(Accent du sud) Il est classique, il a du goût il sent bon les fines herbes et le paprika. De plus, il est croquant, il est fondant et ne manque pas de piment d'espelette. Miam. Il donne faim rien qu'en le décrivant.",
       "price": "11.5",
       "picture": "assets/img/burger9.jpg"
     }

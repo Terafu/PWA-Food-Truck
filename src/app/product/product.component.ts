@@ -23,7 +23,11 @@ export class ProductComponent implements OnInit {
   @Output()
   deletedProduct : EventEmitter<Product> = new EventEmitter();
 
-  constructor(private articleService: ProductService, private modalService: NgbModal) { }
+  showValidate : boolean;
+
+  constructor(private articleService: ProductService, private modalService: NgbModal) {
+    this.showValidate = navigator.onLine;
+  }
 
   ngOnInit() {
   }
@@ -79,7 +83,7 @@ export class ProductComponent implements OnInit {
         var size = b.length
         a = b;
 
-        b.forEach(function(elt){ 
+        b.forEach(function(elt){
 	        //Si le produit est déjà présent dans la liste
 	        if(elt.productId == id){
 	          exist = true
@@ -96,7 +100,7 @@ export class ProductComponent implements OnInit {
 	        i++;
 	    })
       }
-      
+
 
     }
     //Dans le cas ou nous n'avons toujours pas d'article stocké
@@ -104,6 +108,6 @@ export class ProductComponent implements OnInit {
       var prd : RawProductsQuantity = { productId : this.product.id , quantity : 1};
       window.localStorage.setItem("selectedProducts", JSON.stringify(prd));
     }
-    
+
   }
 }

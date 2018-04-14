@@ -12,7 +12,8 @@ export class AdminComponent implements OnInit {
 
 	private _product: Observable<Product[]>;
 
-	constructor(private productService: ProductService) { }
+	constructor(private productService: ProductService) {
+  }
 
 	ngOnInit() {
 		this._product = this.productService.getProducts();
